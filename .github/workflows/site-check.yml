@@ -1,0 +1,77 @@
+name: Site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-site:
+    name: Validate static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check local files and in-page links
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import sys
+
+          root = Path.cwd()
+          required = ("index.html", "style.css", "app.js", "favicon.svg")
+          errors = [f"Missing required file: {name}" for name in required if not (root / name).is_file()]
+
+          class SiteParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = set()
+                  self.duplicates = set()
+                  self.refs = []
+                  self.language = None
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "html":
+                      self.language = attrs.get("lang")
+                  element_id = attrs.get("id")
+                  if element_id:
+                      if element_id in self.ids:
+                          self.duplicates.add(element_id)
+                      self.ids.add(element_id)
+                  for attribute in ("href", "src"):
+                      value = attrs.get(attribute)
+                      if value:
+                          self.refs.append(value)
+
+          parser = SiteParser()
+          parser.feed((root / "index.html").read_text(encoding="utf-8"))
+          if parser.language != "en":
+              errors.append(f"Expected <html lang=\"en\">, found {parser.language!r}")
+          if parser.duplicates:
+              errors.append("Duplicate HTML IDs: " + ", ".join(sorted(parser.duplicates)))
+
+          for reference in parser.refs:
+              parsed = urlparse(reference)
+              if parsed.scheme or parsed.netloc:
+                  continue
+              if parsed.fragment and not parsed.path and parsed.fragment not in parser.ids:
+                  errors.append(f"Missing in-page target: #{parsed.fragment}")
+              if parsed.path:
+                  local_path = root / parsed.path.lstrip("/")
+                  if not local_path.is_file():
+                      errors.append(f"Missing local file referenced by HTML: {reference}")
+
+          if errors:
+              print("\n".join(f"ERROR: {error}" for error in errors))
+              sys.exit(1)
+          print("Static site checks passed.")
+          PY
