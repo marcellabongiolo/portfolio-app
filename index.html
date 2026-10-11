@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" /
+  <link rel="stylesheet" href="style.css?v=5" />
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -69,6 +69,11 @@
         </a>
       </div>
       <a class="all-projects" href="https://github.com/marcellabongiolo?tab=repositories" target="_blank" rel="noreferrer">Ver todos os projetos no GitHub <span>↗</span></a>
+            <div class="project-access" aria-label="Acessar projetos e demonstrações">
+        <div><strong>SLADeck</strong><a href="https://github.com/marcellabongiolo/SLADeck#quickstart-with-docker" target="_blank" rel="noreferrer">Executar localmente com Docker ↗</a></div>
+        <div><strong>AgentTrace</strong><a href="https://github.com/marcellabongiolo/AgentTrace#quick-start-with-docker" target="_blank" rel="noreferrer">Executar localmente com Docker ↗</a></div>
+        <div><strong>AI 4D</strong><a href="https://marcellabongiolo.github.io/ai-4d/" target="_blank" rel="noreferrer">Abrir demonstração interativa ↗</a></div>
+      </div>
       <div class="case-study-list" aria-label="Estudos de caso dos projetos">
         <details class="case-study-item"><summary><span><small>01 · APLICAÇÃO FULL-STACK</small><strong>SLADeck</strong></span><i aria-hidden="true">＋</i></summary><div class="case-study-content"><section><h4>Desafio</h4><p>Dar visibilidade às solicitações de uma equipe: responsáveis, etapas e prazos que exigem atenção.</p></section><section><h4>O que foi construído</h4><p>Uma aplicação com organizações e permissões por equipe, caixa de solicitações com filtros, políticas de SLA, comentários, histórico de atividades e indicadores operacionais. Tarefas em segundo plano acompanham os prazos.</p></section><section><h4>Decisões técnicas</h4><p>Next.js e TypeScript na interface; FastAPI na API; PostgreSQL nos dados; Redis e Celery nas tarefas assíncronas. Há testes para regras de negócio e isolamento entre organizações.</p></section><section><h4>Competências aplicadas</h4><p>Modelagem de fluxos de trabalho, autorização por organização e integração entre API, banco de dados e processamento assíncrono.</p></section></div></details>
         <details class="case-study-item"><summary><span><small>02 · FERRAMENTA DE DESENVOLVIMENTO</small><strong>AgentTrace</strong></span><i aria-hidden="true">＋</i></summary><div class="case-study-content"><section><h4>Desafio</h4><p>Logs isolados dificultam acompanhar as etapas de uma execução. O projeto organiza a telemetria fornecida pela própria aplicação e relaciona operações em uma árvore.</p></section><section><h4>O que foi construído</h4><p>Um SDK Python cria traces e spans aninhados, registra eventos, métricas, duração e erros e envia os dados para uma API. O painel permite navegar da lista de execuções até os detalhes de cada span.</p></section><section><h4>Decisões técnicas</h4><p>FastAPI recebe e consulta os dados; SQLite mantém a persistência do MVP; Next.js e TypeScript apresentam os traces. O repositório inclui testes do SDK, da API, do armazenamento e de integração.</p></section><section><h4>Competências aplicadas</h4><p>Modelagem de telemetria, instrumentação síncrona e assíncrona, validação de API e integração de um pacote Python com uma interface web.</p></section><p class="case-note">O sistema registra eventos fornecidos pela aplicação; não captura raciocínio interno oculto de modelos.</p></div></details>
