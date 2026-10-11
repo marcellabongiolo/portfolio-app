@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" /
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -25,6 +25,7 @@
     <a class="wordmark" href="#inicio" aria-label="Ir para o início">MB<span>.</span></a>
     <nav id="primary-navigation" aria-label="Navegação principal">
       <a href="#trabalho">Trabalho</a>
+            <a href="#habilidades">Habilidades</a>
       <a href="#sobre">Sobre</a>
       <a class="nav-contact" href="mailto:marcellabongioloemili@gmail.com">Vamos conversar <span>↗</span></a>
     </nav>
@@ -75,7 +76,17 @@
       </div>
     </section>
 
-    <section class="about" id="sobre">
+        <section class="skills section-wrap" id="habilidades" aria-labelledby="skills-title">
+      <div class="section-heading"><div><span class="eyebrow">02 — FERRAMENTAS E TECNOLOGIAS</span><h2 id="skills-title">Habilidades em prática<span>.</span></h2></div><p>Tecnologias que aparecem nos meus projetos e venho aplicando na prática.</p></div>
+      <div class="skills-grid">
+        <article class="skill-group"><span class="skill-index">01</span><div><h3>Interfaces web</h3><p>Construção de interfaces e experiências para navegador.</p><ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>Next.js</li></ul></div></article>
+        <article class="skill-group"><span class="skill-index">02</span><div><h3>APIs e backend</h3><p>Serviços, integração de sistemas e processamento de tarefas.</p><ul><li>Python</li><li>FastAPI</li><li>Celery</li><li>Redis</li></ul></div></article>
+        <article class="skill-group"><span class="skill-index">03</span><div><h3>Dados e qualidade</h3><p>Persistência, validação e confiança nas regras da aplicação.</p><ul><li>PostgreSQL</li><li>SQLite</li><li>Testes automatizados</li></ul></div></article>
+        <article class="skill-group"><span class="skill-index">04</span><div><h3>Ferramentas</h3><p>Fluxo de desenvolvimento e publicação dos projetos.</p><ul><li>Git</li><li>GitHub</li><li>GitHub Pages</li><li>Canvas</li></ul></div></article>
+      </div>
+    </section>
+
+<section class="about" id="sobre">
       <div class="about-inner"><div class="about-side"><span class="eyebrow">02 — SOBRE MIM</span><div class="about-stamp">ENGENHARIA<br /><b>DE SOFTWARE</b><br />EM FORMAÇÃO <span>✳</span></div></div>
       <div class="about-copy"><h2>Curiosidade que<br />vira <span>código.</span></h2><p>Sou Marcella Bongiolo, estudante de Engenharia de Software. Neste portfólio, reuni projetos autorais com diferentes desafios: uma aplicação full-stack para operações, uma ferramenta de observabilidade e um experimento de visualização 4D.</p><p>Gosto de entender como cada parte funciona — da interface e API aos dados, testes e decisões de arquitetura. Cada projeto representa uma etapa prática do meu aprendizado.</p><div class="about-links"><a href="https://github.com/marcellabongiolo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:marcellabongioloemili@gmail.com">E-mail ↗</a></div></div></div>
     </section>
