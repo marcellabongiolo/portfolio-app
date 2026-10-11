@@ -4,7 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f4f3ef" />
-  <meta name="description" content="Portfólio de Marcella Bongiolo, estudante de Engenharia de Software." />
+  <meta name="description" content="Portfólio de Marcella Bongiolo, estudante de Engenharia de Software. Conheça projetos de desenvolvimento full-stack, IA e visualização interativa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Marcella Bongiolo — Portfólio" />
+  <meta property="og:description" content="Projetos de desenvolvimento full-stack, observabilidade para agentes de IA e visualização interativa." />
+  <meta property="og:url" content="https://marcellabongiolo.github.io/portfolio-app/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://marcellabongiolo.github.io/portfolio-app/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>Marcella Bongiolo — Portfólio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,17 +20,18 @@
   <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="site-header">
     <a class="wordmark" href="#inicio" aria-label="Ir para o início">MB<span>.</span></a>
-    <nav aria-label="Navegação principal">
+    <nav id="primary-navigation" aria-label="Navegação principal">
       <a href="#trabalho">Trabalho</a>
       <a href="#sobre">Sobre</a>
       <a class="nav-contact" href="mailto:marcellabongioloemili@gmail.com">Vamos conversar <span>↗</span></a>
     </nav>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-controls="primary-navigation" aria-expanded="false"><i></i><i></i></button>
   </header>
 
-  <main>
+  <main id="conteudo">
     <section class="hero" id="inicio">
       <div class="hero-copy">
         <div class="eyebrow"><span class="status-dot"></span> EM FORMAÇÃO · PORTFÓLIO DE PROJETOS</div>
@@ -47,15 +55,15 @@
       <div class="section-heading"><div><span class="eyebrow">01 — PROJETOS EM DESTAQUE</span><h2>O que estou construindo<span>.</span></h2></div><p>Projetos que mostram meu interesse por produtos full-stack, inteligência artificial e experiências interativas.</p></div>
       <div class="project-grid">
         <a class="project-card project-large" href="https://github.com/marcellabongiolo/SLADeck" target="_blank" rel="noreferrer">
-          <div class="project-visual visual-sla"><div class="sla-dashboard"><div class="sla-top"><strong>SLADeck</strong><span>WORKSPACE / OPERATIONS</span><b>● SLA HEALTH</b></div><div class="sla-title">Request overview</div><div class="sla-stats"><i><small>OPEN REQUESTS</small><strong>24</strong></i><i><small>AT RISK</small><strong>03</strong></i><i><small>RESOLVED TODAY</small><strong>18</strong></i></div><div class="sla-row"><span>API access issue</span><b>HIGH</b><small>01:42 left</small></div><div class="sla-row"><span>New team onboarding</span><b>MED</b><small>4h 18m left</small></div></div><span class="visual-caption">01 / FULL-STACK SAAS</span></div>
+          <div class="project-visual visual-sla" aria-hidden="true"><div class="sla-dashboard"><div class="sla-top"><strong>SLADeck</strong><span>WORKSPACE / OPERATIONS</span><b>● SLA HEALTH</b></div><div class="sla-title">Request overview</div><div class="sla-stats"><i><small>OPEN REQUESTS</small><strong>24</strong></i><i><small>AT RISK</small><strong>03</strong></i><i><small>RESOLVED TODAY</small><strong>18</strong></i></div><div class="sla-row"><span>API access issue</span><b>HIGH</b><small>01:42 left</small></div><div class="sla-row"><span>New team onboarding</span><b>MED</b><small>4h 18m left</small></div></div><span class="visual-caption">01 / FULL-STACK SAAS</span></div>
           <div class="project-meta"><div><h3>SLADeck</h3><p>Plataforma SaaS para solicitações, SLAs e operações de equipe.</p></div><span class="project-arrow">↗</span></div>
         </a>
         <a class="project-card" href="https://github.com/marcellabongiolo/AgentTrace" target="_blank" rel="noreferrer">
-          <div class="project-visual visual-agent"><div class="agent-window"><div class="agent-heading"><strong>AgentTrace</strong><span>TRACE · 8f2c…a91</span></div><div class="trace-line"><b>✓</b><span>research-agent</span><small>2.48s</small></div><div class="trace-line trace-child"><b>✓</b><span>search_documents</span><small>1.02s</small></div><div class="trace-line trace-child"><b>!</b><span>summarize</span><small>0.84s</small></div><div class="trace-footer"><i></i> 3 spans <span>·</span> 128 tokens</div></div><span class="visual-caption">02 / IA + OBSERVABILIDADE</span></div>
+          <div class="project-visual visual-agent" aria-hidden="true"><div class="agent-window"><div class="agent-heading"><strong>AgentTrace</strong><span>TRACE · 8f2c…a91</span></div><div class="trace-line"><b>✓</b><span>research-agent</span><small>2.48s</small></div><div class="trace-line trace-child"><b>✓</b><span>search_documents</span><small>1.02s</small></div><div class="trace-line trace-child"><b>!</b><span>summarize</span><small>0.84s</small></div><div class="trace-footer"><i></i> 3 spans <span>·</span> 128 tokens</div></div><span class="visual-caption">02 / IA + OBSERVABILIDADE</span></div>
           <div class="project-meta"><div><h3>AgentTrace</h3><p>SDK e dashboard para rastrear execuções de agentes de IA.</p></div><span class="project-arrow">↗</span></div>
         </a>
         <a class="project-card" href="https://github.com/marcellabongiolo/ai-4d" target="_blank" rel="noreferrer">
-          <div class="project-visual visual-ai4d"><div class="ai4d-orbit orbit-a"></div><div class="ai4d-orbit orbit-b"></div><div class="ai4d-cube"><i></i><i></i><i></i><i></i></div><div class="ai4d-label"><strong>AI 4D</strong><span>SPACE × TIME × CONTEXT</span></div><span class="visual-caption">03 / VISUALIZAÇÃO INTERATIVA</span></div>
+          <div class="project-visual visual-ai4d" aria-hidden="true"><div class="ai4d-orbit orbit-a"></div><div class="ai4d-orbit orbit-b"></div><div class="ai4d-cube"><i></i><i></i><i></i><i></i></div><div class="ai4d-label"><strong>AI 4D</strong><span>SPACE × TIME × CONTEXT</span></div><span class="visual-caption">03 / VISUALIZAÇÃO INTERATIVA</span></div>
           <div class="project-meta"><div><h3>AI 4D</h3><p>Experiência interativa com projeções e rotações de um hipercubo 4D.</p></div><span class="project-arrow">↗</span></div>
         </a>
       </div>
