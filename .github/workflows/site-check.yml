@@ -18,6 +18,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Check JavaScript syntax
+        run: node --check app.js
+
+      - name: Test site behavior
+        run: node --test tests/*.test.mjs
+
       - name: Check local files and in-page links
         run: |
           python3 - <<'PY'
