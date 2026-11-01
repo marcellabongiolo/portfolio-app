@@ -33,7 +33,7 @@ function runSite(withMenu) {
 }
 
 test('site initializes without mobile navigation', () => {
-  assert.equal(runSite(false).year.textContent, String(new Date().getFullYear()));
+  assert.equal(runSite(false).year.textContent, new Date().getFullYear());
 });
 
 test('mobile navigation toggles aria-expanded when available', () => {
