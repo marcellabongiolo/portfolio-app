@@ -66,3 +66,6 @@ body{background:radial-gradient(ellipse at 72% 0%,rgba(48,78,153,.15),transparen
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 .project-access a,.project-meta p,.contact-note{overflow-wrap:anywhere}
+
+/* Keep the expanded mobile menu above the isolated hero artwork. */
+.site-header{position:relative;z-index:10}
