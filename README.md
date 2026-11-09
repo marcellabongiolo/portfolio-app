@@ -21,3 +21,8 @@ O GitHub Pages publica a pasta raiz da branch main. Para atualizar o site, envie
 ## Personalizar
 
 Atualize os projetos, textos e links em index.html. A paleta e os estilos responsivos ficam em style.css.
+
+
+## Verificações de interface
+
+`npm install`, `npx playwright install chromium` e `npm run test:e2e` executam verificações em Chromium para navegação a 360 px, ausência de transbordamento horizontal, fechamento do menu pelo teclado, foco do atalho ao conteúdo, áudio desligado inicialmente e movimento reduzido. `npm test` executa os testes leves de comportamento existentes. Esses testes não equivalem a uma auditoria completa com leitores de tela.

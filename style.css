@@ -60,3 +60,12 @@ body{background:radial-gradient(ellipse at 72% 0%,rgba(48,78,153,.15),transparen
 .ambient-toggle:active{transform:scale(.98)}
 .ambient-toggle:disabled{opacity:.6;cursor:not-allowed}
 @media(max-width:760px){.hero-actions{flex-wrap:wrap;gap:12px}.ambient-toggle{padding:10px 12px;font-size:8px}}
+
+/* Keep project entry points readable as more demos are added. */
+@media(min-width:761px){.project-access{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.project-access a,.project-meta p,.contact-note{overflow-wrap:anywhere}
+
+/* Keep the expanded mobile menu above the isolated hero artwork. */
+.site-header{position:relative;z-index:10}
